@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Product from './Product';
+import Cart from './Cart';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 		<div className="App">
 			<h1>Shoply</h1>
 			<div className="container row">{productList}</div>
+			<Cart />
 		</div>
 	);
 }
