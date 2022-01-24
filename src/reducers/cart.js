@@ -1,4 +1,4 @@
-import { ADD_TO_CART, RESET_CART } from '../actionTypes';
+import { ADD_TO_CART, RESET_CART, DELETE_FROM_CART } from '../actionTypes';
 const INITIAL_STATE = { total: 0, items: {} };
 
 export default function cart(state = INITIAL_STATE, action) {
@@ -12,10 +12,21 @@ export default function cart(state = INITIAL_STATE, action) {
 				total: state.total + action.price,
 				items: itemsCopy
 			};
-		case 'DELETE':
-			return state - 1;
+
+		case DELETE_FROM_CART:
+			const delItemsCopy = { ...state.items };
+			delItemsCopy[action.id] = delItemsCopy[action.id] - 1;
+			if (delItemsCopy[action.id] === 0) delete delItemsCopy[action.id];
+
+			return {
+				...state,
+				total: state.total - action.price,
+				items: delItemsCopy
+			};
+
 		case RESET_CART:
 			return (state = INITIAL_STATE);
+
 		default:
 			return state;
 	}

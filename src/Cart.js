@@ -1,20 +1,31 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { deleteFromCart } from './actions';
+import { useSelector, useDispatch } from 'react-redux';
 import './Cart.css';
 
 const Cart = () => {
+	const dispatch = useDispatch();
 	const items = useSelector((store) => store.cart.items);
 	const products = useSelector((store) => store.products);
 	const total = useSelector((store) => store.cart.total);
 
-	const itemsList = Object.keys(items).map((i) => (
-		<tr key={i}>
-			<td className="text-center align-middle">{products[i].name}</td>
-			<td className="text-center align-middle">${products[i].price}</td>
-			<td className="text-center align-middle">{items[i]}</td>
+	const deleteItem = (id, price) => {
+		console.log('delete');
+		dispatch(deleteFromCart(id, price));
+	};
+
+	const itemsList = Object.keys(items).map((id) => (
+		<tr key={id}>
+			<td className="text-center align-middle">{products[id].name}</td>
+			<td className="text-center align-middle">${products[id].price}</td>
+			<td className="text-center align-middle">{items[id]}</td>
 			<td className="text-center align-middle">
-				{items[i] * products[i].price}
+				{items[id] * products[id].price}
 			</td>
+			<i
+				onClick={() => deleteItem(id, items[id].price)}
+				className="fas fa-trash fa-2x text-danger"
+			/>
 		</tr>
 	));
 
@@ -28,6 +39,7 @@ const Cart = () => {
 						<th>Item Price</th>
 						<th>Item Quantity</th>
 						<th>Sub-Total</th>
+						<th>Edit Cart</th>
 					</tr>
 				</thead>
 				<tbody>

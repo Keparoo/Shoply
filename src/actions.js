@@ -14,9 +14,11 @@ export function resetCart() {
 	};
 }
 
-export function deleteFromCart(id) {
+export function deleteFromCart(id, price) {
+	console.log('actions');
 	return {
 		type: DELETE_FROM_CART,
-		id
+		id,
+		price
 	};
 }
