@@ -7,16 +7,18 @@ function App() {
 	const products = useSelector((store) => store.products);
 	// const dispatch = useDispatch();
 
-	const productList = products.map((p) => (
+	// console.log(Object.keys(products));
+	const productList = Object.keys(products).map((p) => (
 		<Product
-			key={p.id}
-			id={p.id}
-			name={p.name}
-			price={p.price}
-			description={p.description}
-			image={p.image_url}
+			key={p}
+			id={p}
+			name={products[p].name}
+			price={products[p].price}
+			description={products[p].description}
+			image={products[p].image_url}
 		/>
 	));
+	console.log(productList);
 	return (
 		<div className="App">
 			<header className="App-header">
