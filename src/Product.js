@@ -11,7 +11,7 @@ const Product = ({ id, name, price, description, image }) => {
 	};
 
 	return (
-		<div>
+		<div className="col-md">
 			<h4>{name}</h4>
 			<img src={image} alt={name} />
 			<h5>{price}</h5>

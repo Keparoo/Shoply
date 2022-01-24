@@ -7,7 +7,6 @@ function App() {
 	const products = useSelector((store) => store.products);
 	// const dispatch = useDispatch();
 
-	// console.log(Object.keys(products));
 	const productList = Object.keys(products).map((p) => (
 		<Product
 			key={p}
@@ -21,10 +20,8 @@ function App() {
 	console.log(productList);
 	return (
 		<div className="App">
-			<header className="App-header">
-				<h1>Shoply</h1>
-			</header>
-			{productList}
+			<h1>Shoply</h1>
+			<div className="container row">{productList}</div>
 		</div>
 	);
 }
