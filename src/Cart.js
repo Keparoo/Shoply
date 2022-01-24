@@ -26,7 +26,7 @@ const Cart = () => {
 						<th>Item Quantity</th>
 					</tr>
 				</thead>
-				{itemsList}
+				<tbody>{itemsList}</tbody>
 			</table>
 		</div>
 	);
