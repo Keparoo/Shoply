@@ -1,10 +1,17 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addToCart } from './actions';
+import { Link, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './ProductDetails.css';
 
-const Product = ({ id, name, price, description, image }) => {
+const ProductDetails = () => {
+	const { id } = useParams();
 	const dispatch = useDispatch();
+
+	const { image_url, name, price, description } = useSelector((store) => ({
+		...store.products[id]
+	}));
 
 	const add = (id, price) => {
 		dispatch(addToCart(id, price));
@@ -15,7 +22,7 @@ const Product = ({ id, name, price, description, image }) => {
 			<div className="col-md-4">
 				<img
 					className="ProductDetails-img card-img-top"
-					src={image}
+					src={image_url}
 					alt={name}
 				/>
 				<div className="card-body">
@@ -27,10 +34,13 @@ const Product = ({ id, name, price, description, image }) => {
 					<button className="btn btn-primary" onClick={() => add(id, price)}>
 						Add to Cart
 					</button>
+					<Link to="/" className="btn btn-block btn-link">
+						Back
+					</Link>
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default Product;
+export default ProductDetails;
