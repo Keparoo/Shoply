@@ -85,12 +85,16 @@ const Cart = () => {
 					</tr>
 				</tbody>
 			</table>
-			<div className="align-items-right">
-				<DiscountForm />
+			<div className="row">
+				<div className="col-6">
+					<button onClick={clearCart} className="btn btn-info">
+						Clear Cart
+					</button>
+				</div>
+				<div className="col-6">
+					<DiscountForm />
+				</div>
 			</div>
-			<button onClick={clearCart} className="btn btn-info">
-				Clear Cart
-			</button>
 		</div>
 	);
 };

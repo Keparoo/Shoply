@@ -9,7 +9,7 @@ function ProductList() {
 	const dispatch = useDispatch();
 
 	const add = (id, price) => {
-		dispatch(addToCart(id, price));
+		dispatch(addToCart(id));
 	};
 
 	const productList = Object.keys(products).map((id) => (
@@ -20,10 +20,7 @@ function ProductList() {
 						<Link to={`/products/${id}`}>{products[id].name}</Link>
 					</h4>
 					<p>${products[id].price}</p>
-					<button
-						className="btn btn-sm btn-info"
-						onClick={() => add(id, products[id].price)}
-					>
+					<button className="btn btn-sm btn-info" onClick={() => add(id)}>
 						Add to Cart
 					</button>
 				</div>

@@ -4,7 +4,7 @@ import './DiscountForm.css';
 import { useDispatch } from 'react-redux';
 
 const DiscountForm = () => {
-	const [ discount, setDiscount ] = useState('REMOVE10');
+	const [ discount, setDiscount ] = useState('');
 	const dispatch = useDispatch();
 
 	function handleChange(evt) {
@@ -28,7 +28,7 @@ const DiscountForm = () => {
 					value={discount}
 					onChange={handleChange}
 				/>
-				<button className="btn btn-primary">Apply Discount</button>
+				<button className="btn btn-info">Apply Discount Code</button>
 			</form>
 		</div>
 	);
