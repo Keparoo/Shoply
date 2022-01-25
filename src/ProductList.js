@@ -21,7 +21,7 @@ function ProductList() {
 					</h4>
 					<p>${products[id].price}</p>
 					<button
-						className="btn btn-primary"
+						className="btn btn-sm btn-primary"
 						onClick={() => add(id, products[id].price)}
 					>
 						Add to Cart
@@ -33,6 +33,7 @@ function ProductList() {
 	return (
 		<div>
 			<h1>Shoply</h1>
+			<p>Welcome to the Shoply online store.</p>
 			<div className="row">{productList}</div>
 		</div>
 	);

@@ -25,11 +25,11 @@ const Cart = () => {
 			<td className="text-center align-middle">
 				<i
 					onClick={() => deleteItem(id, products[id].price)}
-					className="fas fa-trash text-danger mt-2"
+					className="fas fa-trash text-danger mt-2 Cart-icon"
 				/>
 				<i
 					onClick={() => addItem(id, products[id].price)}
-					className="fas fa-plus text-danger ml-4"
+					className="fas fa-plus text-danger ml-4 Cart-icon"
 				/>
 			</td>
 
@@ -42,6 +42,7 @@ const Cart = () => {
 	return (
 		<div>
 			<h1>Cart</h1>
+			<p />
 			<table className="table table-bordered table-striped">
 				<thead>
 					<tr>

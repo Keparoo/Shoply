@@ -12,7 +12,6 @@ function App() {
 			<Navbar />
 			<div className="container">
 				<Routes />
-				<Cart />
 			</div>
 		</div>
 	);
