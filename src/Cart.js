@@ -7,9 +7,13 @@ import './Cart.css';
 
 const Cart = () => {
 	const dispatch = useDispatch();
-	const { products, items, cartTotal, discountAmount } = useSelector(
-		(store) => store
-	);
+	const {
+		products,
+		items,
+		cartTotal,
+		discountAmount,
+		totalItems
+	} = useSelector((store) => store);
 
 	const deleteItem = (id) => {
 		dispatch(deleteFromCart(id));
@@ -45,7 +49,11 @@ const Cart = () => {
 		</tr>
 	));
 
-	return (
+	return totalItems === 0 ? (
+		<div className="jumbotron">
+			<h3 className="display-4">No items in cart. Keep shopping!</h3>
+		</div>
+	) : (
 		<div className="jumbotron">
 			<h1 className="display-4">Cart</h1>
 			<hr className="my-4" />
