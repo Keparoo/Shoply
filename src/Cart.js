@@ -1,6 +1,7 @@
 import React from 'react';
 import { deleteFromCart, addToCart } from './actions';
 import { useSelector, useDispatch } from 'react-redux';
+import { resetCart } from './actions';
 import './Cart.css';
 
 const Cart = () => {
@@ -15,6 +16,10 @@ const Cart = () => {
 
 	const addItem = (id, price) => {
 		dispatch(addToCart(id, price));
+	};
+
+	const clearCart = () => {
+		dispatch(resetCart());
 	};
 
 	const itemsList = Object.keys(items).map((id) => (
@@ -68,6 +73,9 @@ const Cart = () => {
 					</tr>
 				</tbody>
 			</table>
+			<button onClick={clearCart} className="btn btn-info">
+				Clear Cart
+			</button>
 		</div>
 	);
 };

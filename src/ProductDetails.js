@@ -31,11 +31,11 @@ const ProductDetails = () => {
 						<h5>${price}</h5>
 					</div>
 					<p className="text-center">{description}</p>
-					<button className="btn btn-primary" onClick={() => add(id, price)}>
+					<button className="btn btn-info" onClick={() => add(id, price)}>
 						Add to Cart
 					</button>
 					<p />
-					<Link to="/" className="btn btn-block btn-primary btn-lg">
+					<Link to="/" className="btn btn-block btn-info btn-lg">
 						Back
 					</Link>
 				</div>
