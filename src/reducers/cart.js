@@ -9,7 +9,7 @@ export default function cart(state = INITIAL_STATE, action) {
 
 			return {
 				...state,
-				total: state.total + action.price,
+				total: Math.round(state.total + action.price) * 100 / 100,
 				items: itemsCopy
 			};
 
@@ -20,7 +20,7 @@ export default function cart(state = INITIAL_STATE, action) {
 
 			return {
 				...state,
-				total: state.total - action.price,
+				total: Math.round(state.total - action.price) * 100 / 100,
 				items: delItemsCopy
 			};
 

@@ -23,16 +23,19 @@ const Cart = () => {
 			<td className="text-center align-middle">${products[id].price}</td>
 			<td className="text-center align-middle">{items[id]}</td>
 			<td className="text-center align-middle">
+				<i
+					onClick={() => deleteItem(id, products[id].price)}
+					className="fas fa-trash text-danger mt-2"
+				/>
+				<i
+					onClick={() => addItem(id, products[id].price)}
+					className="fas fa-plus text-danger ml-4"
+				/>
+			</td>
+
+			<td className="text-center align-middle">
 				{items[id] * products[id].price}
 			</td>
-			<i
-				onClick={() => deleteItem(id, items[id].price)}
-				className="fas fa-trash fa-2x text-danger mt-2"
-			/>
-			<i
-				onClick={() => addItem(id, items[id].price)}
-				className="fas fa-plus fa-2x text-danger ml-4"
-			/>
 		</tr>
 	));
 
@@ -44,14 +47,14 @@ const Cart = () => {
 					<tr>
 						<th>Item Name</th>
 						<th>Item Price</th>
-						<th>Item Quantity</th>
+						<th colSpan="2">Item Quantity</th>
 						<th>Sub-Total</th>
-						<th>Edit Cart</th>
 					</tr>
 				</thead>
 				<tbody>
 					{itemsList}
 					<tr className="text-center align-center">
+						<td />
 						<td />
 						<td />
 						<td className="text-right">
