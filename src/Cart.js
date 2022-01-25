@@ -2,13 +2,15 @@ import React from 'react';
 import { deleteFromCart, addToCart } from './actions';
 import { useSelector, useDispatch } from 'react-redux';
 import { resetCart } from './actions';
+import DiscountForm from './DiscountForm';
 import './Cart.css';
 
 const Cart = () => {
 	const dispatch = useDispatch();
-	const items = useSelector((store) => store.cart.items);
 	const products = useSelector((store) => store.products);
-	const total = useSelector((store) => store.cart.total);
+	const { items, cartTotal, discountAmount } = useSelector(
+		(store) => store.cart
+	);
 
 	const deleteItem = (id, price) => {
 		dispatch(deleteFromCart(id, price));
@@ -65,14 +67,28 @@ const Cart = () => {
 						<td />
 						<td />
 						<td className="text-right">
+							<strong>Discount</strong>
+						</td>
+						<td>
+							<strong>${discountAmount.toFixed(2) || 0}</strong>
+						</td>
+					</tr>
+					<tr className="text-center align-center">
+						<td />
+						<td />
+						<td />
+						<td className="text-right">
 							<strong>Total</strong>
 						</td>
 						<td>
-							<strong>${total}</strong>
+							<strong>${cartTotal}</strong>
 						</td>
 					</tr>
 				</tbody>
 			</table>
+			<div className="align-items-right">
+				<DiscountForm />
+			</div>
 			<button onClick={clearCart} className="btn btn-info">
 				Clear Cart
 			</button>

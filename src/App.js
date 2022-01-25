@@ -3,7 +3,6 @@ import React from 'react';
 // import { addToCart } from './actions';
 import Navbar from './Navbar';
 import Routes from './Routes';
-import Cart from './Cart';
 import './App.css';
 
 function App() {

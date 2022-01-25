@@ -9,7 +9,7 @@ import './Navbar.css';
 */
 
 const Navbar = () => {
-	const { totalItems, total } = useSelector((store) => store.cart);
+	const { totalItems, cartTotal } = useSelector((store) => store.cart);
 	return (
 		<nav className="Navbar navbar navbar-expand-md">
 			<Link className="navbar-brand" to="/">
@@ -25,7 +25,7 @@ const Navbar = () => {
 					Num Items: <span className="cart-num">{totalItems}</span>
 				</li>
 				<li className="nav-item mr-4 mt-2 cart">
-					Cart Total: <span className="cart-num">${total}</span>
+					Cart Total: <span className="cart-num">${cartTotal}</span>
 				</li>
 			</ul>
 		</nav>
