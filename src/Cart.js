@@ -48,7 +48,8 @@ const Cart = () => {
 					<tr>
 						<th>Item Name</th>
 						<th>Item Price</th>
-						<th colSpan="2">Item Quantity</th>
+						<th>Quantity</th>
+						<th>Adjust Cart</th>
 						<th>Sub-Total</th>
 					</tr>
 				</thead>

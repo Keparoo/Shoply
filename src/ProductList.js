@@ -13,15 +13,15 @@ function ProductList() {
 	};
 
 	const productList = Object.keys(products).map((id) => (
-		<div className="col-md-3 mb-3" key={id}>
+		<div className="col-md-3 mb-4" key={id}>
 			<div className="card">
 				<div className="card-body">
-					<h4 className="card-title text-center">
+					<h4 className="card-title text-center product">
 						<Link to={`/products/${id}`}>{products[id].name}</Link>
 					</h4>
 					<p>${products[id].price}</p>
 					<button
-						className="btn btn-sm btn-primary"
+						className="btn btn-sm btn-info"
 						onClick={() => add(id, products[id].price)}
 					>
 						Add to Cart
@@ -40,7 +40,7 @@ function ProductList() {
 				here on Shoply.
 			</p>
 			<p className="lead">
-				<Link className="btn btn-primary btn-lg" to="/cart" role="button">
+				<Link className="btn btn-info btn-lg" to="/cart" role="button">
 					Go to Cart
 				</Link>
 			</p>
