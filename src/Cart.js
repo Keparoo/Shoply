@@ -11,12 +11,12 @@ const Cart = () => {
 		(store) => store
 	);
 
-	const deleteItem = (id, price) => {
-		dispatch(deleteFromCart(id, price));
+	const deleteItem = (id) => {
+		dispatch(deleteFromCart(id));
 	};
 
-	const addItem = (id, price) => {
-		dispatch(addToCart(id, price));
+	const addItem = (id) => {
+		dispatch(addToCart(id));
 	};
 
 	const clearCart = () => {
@@ -30,11 +30,11 @@ const Cart = () => {
 			<td className="text-center align-middle">{items[id]}</td>
 			<td className="text-center align-middle">
 				<i
-					onClick={() => deleteItem(id, products[id].price)}
+					onClick={() => deleteItem(id)}
 					className="fas fa-trash text-danger mt-2 Cart-icon"
 				/>
 				<i
-					onClick={() => addItem(id, products[id].price)}
+					onClick={() => addItem(id)}
 					className="fas fa-plus text-danger ml-4 Cart-icon"
 				/>
 			</td>

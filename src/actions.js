@@ -5,11 +5,10 @@ import {
 	APPLY_DISCOUNT
 } from './actionTypes';
 
-export function addToCart(id, price) {
+export function addToCart(id) {
 	return {
 		type: ADD_TO_CART,
-		id,
-		price
+		id
 	};
 }
 
@@ -19,11 +18,10 @@ export function resetCart() {
 	};
 }
 
-export function deleteFromCart(id, price) {
+export function deleteFromCart(id) {
 	return {
 		type: DELETE_FROM_CART,
-		id,
-		price
+		id
 	};
 }
 
