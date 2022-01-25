@@ -34,7 +34,8 @@ const ProductDetails = () => {
 					<button className="btn btn-primary" onClick={() => add(id, price)}>
 						Add to Cart
 					</button>
-					<Link to="/" className="btn btn-block btn-link">
+					<p />
+					<Link to="/" className="btn btn-block btn-primary btn-lg">
 						Back
 					</Link>
 				</div>

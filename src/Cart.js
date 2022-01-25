@@ -34,7 +34,7 @@ const Cart = () => {
 			</td>
 
 			<td className="text-center align-middle">
-				{items[id] * products[id].price}
+				${Math.round(items[id] * products[id].price * 100) / 100}
 			</td>
 		</tr>
 	));

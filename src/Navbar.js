@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import './Navbar.css';
 
 /* Navigation bar for site
@@ -8,6 +9,7 @@ import './Navbar.css';
 */
 
 const Navbar = () => {
+	const { totalItems, total } = useSelector((store) => store.cart);
 	return (
 		<nav className="Navbar navbar navbar-expand-md">
 			<Link className="navbar-brand" to="/">
@@ -18,6 +20,12 @@ const Navbar = () => {
 					<Link className="nav-link" to="/">
 						Cart
 					</Link>
+				</li>
+				<li className="nav-item mr-4 mt-2 cart">
+					Num Items: <span className="cart-num">{totalItems}</span>
+				</li>
+				<li className="nav-item mr-4 mt-2 cart">
+					Cart Total: <span className="cart-num">${total}</span>
 				</li>
 			</ul>
 		</nav>

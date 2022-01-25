@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { addToCart } from './actions';
 import './ProductList.css';
 
@@ -15,7 +16,9 @@ function ProductList() {
 		<div className="col-md-3 mb-3" key={id}>
 			<div className="card">
 				<div className="card-body">
-					<h4 className="card-title text-center">{products[id].name}</h4>
+					<h4 className="card-title text-center">
+						<Link to={`/products/${id}`}>{products[id].name}</Link>
+					</h4>
 					<p>${products[id].price}</p>
 					<button
 						className="btn btn-primary"

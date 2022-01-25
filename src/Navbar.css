@@ -7,3 +7,12 @@
 	font-weight: bold;
 	color: black;
 }
+
+.cart {
+	color: #007bff;
+}
+
+.cart-num {
+	font-weight: bold;
+	color: rgb(91, 86, 129);
+}

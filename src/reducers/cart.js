@@ -1,5 +1,5 @@
 import { ADD_TO_CART, RESET_CART, DELETE_FROM_CART } from '../actionTypes';
-const INITIAL_STATE = { total: 0, items: {} };
+const INITIAL_STATE = { total: 0, totalItems: 0, items: {} };
 
 export default function cart(state = INITIAL_STATE, action) {
 	switch (action.type) {
@@ -9,6 +9,7 @@ export default function cart(state = INITIAL_STATE, action) {
 
 			return {
 				...state,
+				totalItems: state.totalItems + 1,
 				total: Math.round((state.total + action.price) * 100) / 100,
 				items: itemsCopy
 			};
@@ -20,6 +21,7 @@ export default function cart(state = INITIAL_STATE, action) {
 
 			return {
 				...state,
+				totalItems: state.totalItems - 1,
 				total: Math.round((state.total - action.price) * 100) / 100,
 				items: delItemsCopy
 			};
