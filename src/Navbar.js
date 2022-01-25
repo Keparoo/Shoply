@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, shallowEqual } from 'react-redux';
 import './Navbar.css';
 
 /* Navigation bar for site
@@ -9,7 +9,7 @@ import './Navbar.css';
 */
 
 const Navbar = () => {
-	const { totalItems, cartTotal } = useSelector((store) => store);
+	const { totalItems, cartTotal } = useSelector((store) => store, shallowEqual);
 	return (
 		<nav className="Navbar navbar navbar-expand-md">
 			<Link className="navbar-brand" to="/">

@@ -1,6 +1,6 @@
 import React from 'react';
 import { deleteFromCart, addToCart } from './actions';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import { resetCart } from './actions';
 import DiscountForm from './DiscountForm';
 import './Cart.css';
@@ -13,7 +13,7 @@ const Cart = () => {
 		cartTotal,
 		discountAmount,
 		totalItems
-	} = useSelector((store) => store);
+	} = useSelector((store) => store, shallowEqual);
 
 	const deleteItem = (id) => {
 		dispatch(deleteFromCart(id));

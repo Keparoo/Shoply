@@ -1,11 +1,11 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector, useDispatch, shallowEqual } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { addToCart } from './actions';
 import './ProductList.css';
 
 function ProductList() {
-	const products = useSelector((store) => store.products);
+	const products = useSelector((store) => store.products, shallowEqual);
 	const dispatch = useDispatch();
 
 	const add = (id, price) => {
