@@ -9,7 +9,7 @@ import './Navbar.css';
 */
 
 const Navbar = () => {
-	const { totalItems, cartTotal } = useSelector((store) => store.cart);
+	const { totalItems, cartTotal } = useSelector((store) => store);
 	return (
 		<nav className="Navbar navbar navbar-expand-md">
 			<Link className="navbar-brand" to="/">

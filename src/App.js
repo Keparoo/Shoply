@@ -1,6 +1,4 @@
 import React from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-// import { addToCart } from './actions';
 import Navbar from './Navbar';
 import Routes from './Routes';
 import './App.css';

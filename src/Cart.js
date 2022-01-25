@@ -7,9 +7,8 @@ import './Cart.css';
 
 const Cart = () => {
 	const dispatch = useDispatch();
-	const products = useSelector((store) => store.products);
-	const { items, cartTotal, discountAmount } = useSelector(
-		(store) => store.cart
+	const { products, items, cartTotal, discountAmount } = useSelector(
+		(store) => store
 	);
 
 	const deleteItem = (id, price) => {
