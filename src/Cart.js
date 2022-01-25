@@ -1,5 +1,5 @@
 import React from 'react';
-import { deleteFromCart } from './actions';
+import { deleteFromCart, addToCart } from './actions';
 import { useSelector, useDispatch } from 'react-redux';
 import './Cart.css';
 
@@ -10,8 +10,11 @@ const Cart = () => {
 	const total = useSelector((store) => store.cart.total);
 
 	const deleteItem = (id, price) => {
-		console.log('delete');
 		dispatch(deleteFromCart(id, price));
+	};
+
+	const addItem = (id, price) => {
+		dispatch(addToCart(id, price));
 	};
 
 	const itemsList = Object.keys(items).map((id) => (
@@ -24,7 +27,11 @@ const Cart = () => {
 			</td>
 			<i
 				onClick={() => deleteItem(id, items[id].price)}
-				className="fas fa-trash fa-2x text-danger"
+				className="fas fa-trash fa-2x text-danger mt-2"
+			/>
+			<i
+				onClick={() => addItem(id, items[id].price)}
+				className="fas fa-plus fa-2x text-danger ml-4"
 			/>
 		</tr>
 	));
