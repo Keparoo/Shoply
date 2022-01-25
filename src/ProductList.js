@@ -31,9 +31,21 @@ function ProductList() {
 		</div>
 	));
 	return (
-		<div>
-			<h1>Shoply</h1>
-			<p>Welcome to the Shoply online store.</p>
+		<div className="jumbotron">
+			<h1 className="display-4">Shoply</h1>
+			<p className="lead">Welcome to the Shoply online store.</p>
+			<hr className="my-4" />
+			<p>
+				Amazon is so yesterday. The real bargains and the best products are all
+				here on Shoply.
+			</p>
+			<p className="lead">
+				<Link className="btn btn-primary btn-lg" to="/cart" role="button">
+					Go to Cart
+				</Link>
+			</p>
+			<div />
+
 			<div className="row">{productList}</div>
 		</div>
 	);

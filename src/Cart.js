@@ -40,10 +40,10 @@ const Cart = () => {
 	));
 
 	return (
-		<div>
-			<h1>Cart</h1>
-			<p />
-			<table className="table table-bordered table-striped">
+		<div className="jumbotron">
+			<h1 className="display-4">Cart</h1>
+			<hr className="my-4" />
+			<table className="table table-bordered table-striped my-4">
 				<thead>
 					<tr>
 						<th>Item Name</th>
