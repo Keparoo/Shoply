@@ -3,6 +3,8 @@ import { applyDiscount } from './actions';
 import './DiscountForm.css';
 import { useDispatch } from 'react-redux';
 
+// Inline form to enter a coupon code for a discount
+
 const DiscountForm = () => {
 	const [ discount, setDiscount ] = useState('');
 	const dispatch = useDispatch();

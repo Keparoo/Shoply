@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import { addToCart } from './actions';
 import './ProductList.css';
 
+// Display a list of products with limited product information
+// Routed at /products
+
 function ProductList() {
 	const products = useSelector((store) => store.products, shallowEqual);
 	const dispatch = useDispatch();

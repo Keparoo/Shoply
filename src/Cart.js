@@ -5,6 +5,9 @@ import { resetCart } from './actions';
 import DiscountForm from './DiscountForm';
 import './Cart.css';
 
+// Display the contents of the shopping cart
+// Routed at /cart
+
 const Cart = () => {
 	const dispatch = useDispatch();
 	const {
@@ -27,6 +30,7 @@ const Cart = () => {
 		dispatch(resetCart());
 	};
 
+	// Generate table cells of purchases in cart with buttons to add or subtract items from cart
 	const itemsList = Object.keys(items).map((id) => (
 		<tr key={id}>
 			<td className="text-center align-middle">{products[id].name}</td>
@@ -49,6 +53,7 @@ const Cart = () => {
 		</tr>
 	));
 
+	// If cart not empty, display table of cart items
 	return totalItems === 0 ? (
 		<div className="jumbotron">
 			<h3 className="display-4">No items in cart. Keep shopping!</h3>

@@ -4,6 +4,8 @@ import ProductList from './ProductList';
 import ProductDetails from './ProductDetails';
 import Cart from './Cart';
 
+// Routing for app
+
 const Routes = () => {
 	return (
 		<Switch>

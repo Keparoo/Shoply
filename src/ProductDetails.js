@@ -5,6 +5,9 @@ import { Link, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import './ProductDetails.css';
 
+// Display the details of a product and button to add to cart
+// Routed at /products/:id
+
 const ProductDetails = () => {
 	const { id } = useParams();
 	const dispatch = useDispatch();

@@ -5,7 +5,7 @@ import './Navbar.css';
 
 /* Navigation bar for site
     Rendered on every page
-    Rendered by App\
+    Rendered by App
 */
 
 const Navbar = () => {
